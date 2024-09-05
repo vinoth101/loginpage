@@ -1,17 +1,11 @@
-
-<form (ngSubmit)="onLogin(username.value, password.value)">
-    <h2>Login</h2>
+<form (ngSubmit)="login()">
   <div>
-    <label for="username">Username:</label>
-    <input type="text" id="username" #username required>
+    <label for="email">username:</label>
+    <input id="email" [(ngModel)]="user.username" name="usernmae" required>
   </div>
   <div>
     <label for="password">Password:</label>
-    <input type="password" id="password" #password required>
+    <input id="password" type="password" [(ngModel)]="user.password" name="password" required>
   </div>
   <button type="submit">Login</button>
-  <p *ngIf="errorMessage">{{ errorMessage }}</p>
-  <br>
-  <p>New user? <a href="/register">Register here</a></p>
 </form>
-
